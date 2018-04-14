@@ -160,3 +160,7 @@ $ docker swarm join-token worker
 ```Bash
 $ docker swarm join --token <token> <myvm ip>:<port>
 ```
+- 當結點遺失並回復後，服務並不會發派，所以要用此指令重新發派服務
+```Bash
+$ docker service scale getstartedlab_web=5
+```
