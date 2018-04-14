@@ -93,7 +93,7 @@ Status: Downloaded newer image for john/get-started:part2
 
 ## Services
 1. create docker-compose.yml file
-```vim
+```yml
 version: "3"
 services:
   web:
