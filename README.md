@@ -5,7 +5,7 @@
 1.	需要一個docker file   
 https://docs.docker.com/get-started/part2/#dockerfile
 #### vim dockerfile
-```vim
+```docker
 # Use an official Python runtime as a parent image
 FROM python:2.7-slim
 
