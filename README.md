@@ -93,7 +93,7 @@ Status: Downloaded newer image for john/get-started:part2
 
 ## Services
 1. create docker-compose.yml file
-```Bash
+```vim
 version: "3"
 services:
   web:
@@ -116,7 +116,7 @@ networks:       # 必須要有同樣名稱才能互相連線
 ```
 2. 建立管理者
 #### manager 
-可以建置多個管理者，以防image掛掉，但是不須為奇數管理者，才能去決定
+- 可以建置多個管理者，以防image掛掉，但是不須為奇數管理者，才能去決定
 ```Bash
 $ docker swarm init
 ```
