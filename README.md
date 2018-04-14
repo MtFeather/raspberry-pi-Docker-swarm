@@ -69,4 +69,7 @@ docker build -t friendlyhello .
 docker run -p 4000:80 friendlyhello
 ```
 
-sss
+5. 上傳image到docker
+```Bash
+docker push username/repository:tag
+```
