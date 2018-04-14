@@ -167,6 +167,7 @@ $ docker service scale getstartedlab_web=5
 
 ## Stack
 ### Persist the data 加入新服務
+#### Redis:
 - 建立新的yml檔
 ```yml
 version: "3"
@@ -205,3 +206,51 @@ networks:
 ```Bash
 $ docker service ps getstartedlab_redis --no-trunc
 ```
+***
+#### visualizer: 圖形化系統狀態
+- 新增visualizer服務
+```yml
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: username/repo:tag
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - "/home/docker/data:/data"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    command: redis-server --appendonly yes
+    networks:
+      - webnet
+networks: 
+  webnet:
+```
+![visualizer-with-redis.png](https://docs.docker.com/get-started/images/visualizer-with-redis.png)
