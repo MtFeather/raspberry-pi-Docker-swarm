@@ -73,3 +73,19 @@ docker run -p 4000:80 friendlyhello
 ```Bash
 docker push username/repository:tag
 ```
+6. 可以到雲端去抓image來用
+```Bash
+$ docker run -p 4000:80 username/repository:tag
+Unable to find image 'john/get-started:part2' locally
+part2: Pulling from john/get-started
+10a267c67f42: Already exists
+f68a39a6a5e4: Already exists
+9beaffc0cf19: Already exists
+3c1fe835fb6b: Already exists
+4c9f1fa8fcb8: Already exists
+ee7d8f576a14: Already exists
+fbccdcced46e: Already exists
+Digest: sha256:0601c866aab2adcc6498200efd0f754037e909e5fd42069adeff72d1e2439068
+Status: Downloaded newer image for john/get-started:part2
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+```
