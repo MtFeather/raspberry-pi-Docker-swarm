@@ -1,4 +1,5 @@
 # raspberry-pi-Docker-swarm
+## Containers
 - Arm系統要使用docker必須使用這個核心:
   https://github.com/kennychennetman/docker/blob/master/visualizer-arm.txt
 
@@ -88,4 +89,34 @@ fbccdcced46e: Already exists
 Digest: sha256:0601c866aab2adcc6498200efd0f754037e909e5fd42069adeff72d1e2439068
 Status: Downloaded newer image for john/get-started:part2
  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+```
+
+## Services
+1. create docker-compose.yml file
+```Bash
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: username/repo:tag
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+networks:       # 必須要有同樣名稱才能互相連線
+  webnet:
+```
+2. 建立管理者
+### manager 
+可以建置多個管理者，以防image掛掉，但是不須為奇數管理者，才能去決定
+```Bash
+docker swarm init
 ```
