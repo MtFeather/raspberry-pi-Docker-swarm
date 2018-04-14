@@ -38,6 +38,10 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ```
 3.	建置APP
-    ```Bash
-    docker build -t friendlyhello .
-    ```
+```Bash
+docker build -t friendlyhello .
+```
+4. 執行APP
+```Bash
+docker run -p 4000:80 friendlyhello
+```
