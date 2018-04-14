@@ -132,3 +132,21 @@ $ docker stack deploy -c docker-compose.yml getstartedlab
 ```Bash
 $ docker service ls
 ```
+```Bash
+$ docker service ps getstartedlab_web
+```
+```Bash
+docker container ls -q
+```
+- 如果yml檔案有更動要重新執行
+```Bash
+docker stack deploy -c docker-compose.yml getstartedlab
+```
+- 停止app
+```Bash
+docker stack rm getstartedlab
+```
+- 停止swarm
+```Bash
+docker swarm leave --force
+```
