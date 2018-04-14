@@ -150,3 +150,13 @@ docker stack rm getstartedlab
 ```Bash
 docker swarm leave --force
 ```
+## Swarm
+1. 加入node
+- 可以先查詢加入代碼
+```Bash
+$ docker swarm join-token worker
+```
+- 加入
+```Bash
+$ docker swarm join --token <token> <myvm ip>:<port>
+```
