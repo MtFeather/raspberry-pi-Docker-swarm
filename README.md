@@ -228,7 +228,7 @@ services:
     networks:
       - webnet
   visualizer:
-    # 如果是arm系統image必須更換成 alexellis2/visualizer-arm:latest
+    # if system is "arm" image. Need change to "alexellis2/visualizer-arm:latest"
     image: dockersamples/visualizer:stable
     ports:
       - "8080:8080"
