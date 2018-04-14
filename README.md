@@ -229,6 +229,7 @@ services:
       - webnet
   visualizer:
     /* if system is "arm" image. Need change to "alexellis2/visualizer-arm:latest" */
+     # replace username/repo:tag with your name and image details
     image: dockersamples/visualizer:stable
     ports:
       - "8080:8080"
