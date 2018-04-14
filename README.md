@@ -115,8 +115,20 @@ networks:       # 必須要有同樣名稱才能互相連線
   webnet:
 ```
 2. 建立管理者
-### manager 
+#### manager 
 可以建置多個管理者，以防image掛掉，但是不須為奇數管理者，才能去決定
 ```Bash
-docker swarm init
+$ docker swarm init
+```
+- 取得要join的碼
+```Bash
+$ docker swarm join-token worker
+```
+- 給予app名子
+```Bash
+$ docker stack deploy -c docker-compose.yml getstartedlab
+```
+- 查看服務名子
+```Bash
+$ docker service ls
 ```
