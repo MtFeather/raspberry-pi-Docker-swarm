@@ -5,7 +5,7 @@
 1.	需要一個docker file   
 https://docs.docker.com/get-started/part2/#dockerfile
 #### vim dockerfile
-```docker
+```vim
 # Use an official Python runtime as a parent image
 FROM python:2.7-slim
 
@@ -29,12 +29,12 @@ CMD ["python", "app.py"]
 ```
 2.	建立requirements.txt 和 app.py
 #### vim requirements.txt
-```Bash
+```vim
 Flask
 Redis
 ```
 #### vim app.py
-```Bash
+```python
 from flask import Flask
 from redis import Redis, RedisError
 import os
@@ -68,3 +68,5 @@ docker build -t friendlyhello .
 ```Bash
 docker run -p 4000:80 friendlyhello
 ```
+
+sss
