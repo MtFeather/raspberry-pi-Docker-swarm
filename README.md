@@ -228,8 +228,7 @@ services:
     networks:
       - webnet
   visualizer:
-    /* if system is "arm" image. Need change to "alexellis2/visualizer-arm:latest" */
-     # if system is 'arm' image. Need change to 'alexellis2/visualizer-arm:latest'
+    # if system is 'arm' image. Need change to 'alexellis2/visualizer-arm:latest'
     image: dockersamples/visualizer:stable
     ports:
       - "8080:8080"
@@ -256,4 +255,3 @@ networks:
   webnet:
 ```
 ![visualizer-with-redis.png](https://docs.docker.com/get-started/images/visualizer-with-redis.png)
-dddd
